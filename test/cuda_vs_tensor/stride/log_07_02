@@ -1,0 +1,584 @@
+build/main 1024 16 16 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.739217e-04
+max_ratio_stride: 2.051103e-04
+max_ratio_tensor: 4.001996e-05
+max_ratio_cuda: 2.929955e-05
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 2.207586, mean_tensor_stride_error: 2.028575
+build/main 1024 32 32 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.421452e-04
+max_ratio_stride: 1.888807e-04
+max_ratio_tensor: 2.525463e-04
+max_ratio_cuda: 1.703582e-04
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 7.937955, mean_tensor_stride_error: 6.773363
+build/main 1024 64 64 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.831740e-03
+max_ratio_stride: 4.123557e-03
+max_ratio_tensor: 2.127804e-03
+max_ratio_cuda: 4.573027e-03
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 18.729286, mean_tensor_stride_error: 12.371235
+build/main 1024 128 128 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 4.053351e-03
+max_ratio_stride: 3.409398e-03
+max_ratio_tensor: 2.799752e-02
+max_ratio_cuda: 2.438292e-03
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 48.467358, mean_tensor_stride_error: 25.710492
+build/main 1024 256 256 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.597962e-02
+max_ratio_stride: 2.781428e-02
+max_ratio_tensor: 4.605725e-02
+max_ratio_cuda: 5.253365e-03
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 79.796906, mean_tensor_stride_error: 51.634275
+build/main 1024 512 512 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 3.594782e-02
+max_ratio_stride: 1.523666e-02
+max_ratio_tensor: 1.131646e-01
+max_ratio_cuda: 6.517645e-02
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 396.528027, mean_tensor_stride_error: 102.111743
+build/main 1024 1024 1024 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 2.618859e-02
+max_ratio_stride: 3.199614e-02
+max_ratio_tensor: 9.667631e-02
+max_ratio_cuda: 3.669537e-02
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 593.505289, mean_tensor_stride_error: 201.804999
+build/main 1024 2048 2048 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+origin: -2.656000e+03, cuda: -2.429381e+03, tensor: -3.806156e+03, tensor_stride: -2.967401e+03
+origin: -3.200000e+03, cuda: -3.331514e+03, tensor: -3.652016e+03, tensor_stride: -3.770686e+03
+origin: 1.696000e+03, cuda: 1.906861e+03, tensor: 1.258700e+03, tensor_stride: 1.918222e+03
+max_ratio_fp32: 2.466728e-01
+max_ratio_stride: 1.613416e-01
+max_ratio_tensor: 4.336839e-01
+max_ratio_cuda: 2.291664e-01
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 1651.155007, mean_tensor_stride_error: 394.053285
+build/main 1024 4096 4096 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+origin: 1.045480e+04, cuda: 1.002638e+04, tensor: 6.675625e+03, tensor_stride: 1.192781e+04
+origin: -7.956051e+02, cuda: -2.229375e+02, tensor: 9.244844e+02, tensor_stride: -1.362085e+03
+origin: -1.736492e+04, cuda: -1.958689e+04, tensor: -2.208538e+04, tensor_stride: -2.051322e+04
+origin: -1.232258e+03, cuda: -8.697812e+02, tensor: -5.708172e+03, tensor_stride: -2.399100e+03
+origin: 3.902365e+02, cuda: 1.143609e+03, tensor: 6.130664e+03, tensor_stride: 2.186698e+03
+origin: 1.397049e+04, cuda: 1.487136e+04, tensor: 1.215717e+04, tensor_stride: 1.568563e+04
+max_ratio_fp32: 8.313158e-01
+max_ratio_stride: 7.565706e-01
+max_ratio_tensor: 2.510414e+00
+max_ratio_cuda: 7.124955e-01
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 4608.048464, mean_tensor_stride_error: 773.800693
+build/main 1024 8192 8192 0 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+origin: 5.440000e+03, cuda: 6.824703e+03, tensor: 1.616931e+04, tensor_stride: 6.417388e+03
+origin: -5.828000e+03, cuda: -4.517094e+03, tensor: -1.018606e+04, tensor_stride: -7.341286e+03
+origin: 6.912000e+03, cuda: 6.722906e+03, tensor: 1.683886e+04, tensor_stride: 9.286289e+03
+origin: -1.174400e+04, cuda: -1.223425e+04, tensor: -1.169347e+04, tensor_stride: -1.292111e+04
+origin: -3.123200e+04, cuda: -3.112494e+04, tensor: -3.585794e+04, tensor_stride: -3.488845e+04
+origin: 1.596800e+04, cuda: 1.618197e+04, tensor: 2.770665e+04, tensor_stride: 1.797742e+04
+origin: -3.968000e+03, cuda: -5.383188e+03, tensor: 6.327291e+03, tensor_stride: -5.434317e+03
+origin: -3.712000e+03, cuda: -3.853906e+03, tensor: 6.500469e+02, tensor_stride: -4.681313e+03
+origin: 8.192000e+03, cuda: 1.109997e+04, tensor: 1.724158e+04, tensor_stride: 1.040229e+04
+origin: -2.816000e+04, cuda: -2.902675e+04, tensor: -3.798312e+04, tensor_stride: -3.301340e+04
+origin: 5.568000e+03, cuda: 5.752625e+03, tensor: 4.604688e+03, tensor_stride: 7.235496e+03
+origin: 2.764800e+04, cuda: 2.841350e+04, tensor: 3.800531e+04, tensor_stride: 3.111645e+04
+origin: -1.280000e+04, cuda: -1.091409e+04, tensor: -1.649266e+04, tensor_stride: -1.446703e+04
+origin: 2.598400e+04, cuda: 2.552944e+04, tensor: 3.193188e+04, tensor_stride: 3.033697e+04
+max_ratio_fp32: 1.266427e+01
+max_ratio_stride: 4.917653e+00
+max_ratio_tensor: 9.232620e+01
+max_ratio_cuda: 5.431548e+00
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 12870.337144, mean_tensor_stride_error: 1520.394571
+build/main 1024 16 16 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 2.098763e-07
+max_ratio_stride: 4.474781e-07
+max_ratio_tensor: 7.351198e-07
+max_ratio_cuda: 1.230718e-05
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000000, mean_tensor_stride_error: 0.000000
+build/main 1024 32 32 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 2.381518e-07
+max_ratio_stride: 4.801658e-07
+max_ratio_tensor: 1.078705e-06
+max_ratio_cuda: 1.059040e-06
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000000, mean_tensor_stride_error: 0.000000
+build/main 1024 64 64 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 3.591036e-07
+max_ratio_stride: 6.135853e-07
+max_ratio_tensor: 2.030489e-06
+max_ratio_cuda: 3.706872e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000000, mean_tensor_stride_error: 0.000000
+build/main 1024 128 128 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 5.346786e-07
+max_ratio_stride: 7.678897e-07
+max_ratio_tensor: 3.241021e-06
+max_ratio_cuda: 4.432704e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000002, mean_tensor_stride_error: 0.000000
+build/main 1024 256 256 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 4.452289e-07
+max_ratio_stride: 8.533680e-07
+max_ratio_tensor: 2.791420e-06
+max_ratio_cuda: 4.980702e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000004, mean_tensor_stride_error: 0.000000
+build/main 1024 512 512 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 5.510711e-07
+max_ratio_stride: 1.188251e-06
+max_ratio_tensor: 1.007575e-05
+max_ratio_cuda: 5.808795e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000034, mean_tensor_stride_error: 0.000001
+build/main 1024 1024 1024 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 5.987661e-07
+max_ratio_stride: 1.575066e-06
+max_ratio_tensor: 8.788684e-06
+max_ratio_cuda: 7.170589e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000067, mean_tensor_stride_error: 0.000003
+build/main 1024 2048 2048 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 6.739203e-07
+max_ratio_stride: 2.411547e-06
+max_ratio_tensor: 1.613151e-05
+max_ratio_cuda: 7.682264e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000273, mean_tensor_stride_error: 0.000008
+build/main 1024 4096 4096 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 7.553035e-06
+max_ratio_stride: 2.876989e-06
+max_ratio_tensor: 2.961908e-05
+max_ratio_cuda: 7.737450e-06
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.001096, mean_tensor_stride_error: 0.000021
+build/main 1024 8192 8192 1 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 2.911052e-06
+max_ratio_stride: 4.196614e-06
+max_ratio_tensor: 5.480889e-05
+max_ratio_cuda: 3.043960e-06
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.004345, mean_tensor_stride_error: 0.000057
+build/main 1024 16 16 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.080990e-04
+max_ratio_stride: 6.791223e-04
+max_ratio_tensor: 7.601406e-04
+max_ratio_cuda: 1.174103e-03
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000000, mean_tensor_stride_error: 0.000000
+build/main 1024 32 32 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.110092e-03
+max_ratio_stride: 1.242277e-03
+max_ratio_tensor: 1.120201e-03
+max_ratio_cuda: 1.291028e-03
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000000, mean_tensor_stride_error: 0.000000
+build/main 1024 64 64 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 4.597696e-03
+max_ratio_stride: 3.942517e-03
+max_ratio_tensor: 4.551121e-03
+max_ratio_cuda: 3.238805e-03
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000000, mean_tensor_stride_error: 0.000000
+build/main 1024 128 128 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 3.198852e-02
+max_ratio_stride: 7.226237e-02
+max_ratio_tensor: 9.142133e-02
+max_ratio_cuda: 3.098072e-02
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000000, mean_tensor_stride_error: 0.000000
+build/main 1024 256 256 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 2.328343e-02
+max_ratio_stride: 3.596420e-02
+max_ratio_tensor: 4.210580e-02
+max_ratio_cuda: 2.187863e-02
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000000, mean_tensor_stride_error: 0.000000
+build/main 1024 512 512 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 3.465497e-02
+max_ratio_stride: 7.410776e-02
+max_ratio_tensor: 6.105032e-02
+max_ratio_cuda: 2.959434e-02
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000001, mean_tensor_stride_error: 0.000000
+build/main 1024 1024 1024 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+origin: -1.430511e-06, cuda: -1.646098e-06, tensor: -3.347595e-07, tensor_stride: -1.769908e-06
+max_ratio_fp32: 2.676398e-01
+max_ratio_stride: 2.860512e-01
+max_ratio_tensor: 7.567569e-01
+max_ratio_cuda: 1.960885e-01
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000001, mean_tensor_stride_error: 0.000000
+build/main 1024 2048 2048 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+origin: -9.298325e-06, cuda: -9.275260e-06, tensor: -1.235478e-05, tensor_stride: -1.055518e-05
+origin: 1.370907e-06, cuda: 1.838867e-06, tensor: 3.313209e-06, tensor_stride: 1.539451e-06
+origin: 6.854534e-07, cuda: 4.903486e-07, tensor: -2.965971e-07, tensor_stride: 1.141495e-06
+origin: 0.000000e+00, cuda: 5.101901e-07, tensor: 6.801711e-07, tensor_stride: 8.360690e-07
+max_ratio_fp32: 1.292008e+00
+max_ratio_stride: 6.330515e-01
+max_ratio_tensor: 2.036875e+00
+max_ratio_cuda: 1.297075e+00
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000003, mean_tensor_stride_error: 0.000001
+build/main 1024 4096 4096 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+origin: 1.345476e-05, cuda: 1.682143e-05, tensor: 2.001092e-05, tensor_stride: 1.492038e-05
+origin: 2.490363e-05, cuda: 2.761884e-05, tensor: 3.458539e-05, tensor_stride: 3.524523e-05
+origin: -6.676802e-06, cuda: -1.021041e-05, tensor: -1.190434e-05, tensor_stride: -8.081329e-06
+origin: -3.986086e-05, cuda: -4.143023e-05, tensor: -4.715542e-05, tensor_stride: -4.646314e-05
+origin: -1.619080e-05, cuda: -1.757251e-05, tensor: -1.446483e-05, tensor_stride: -1.903302e-05
+origin: 1.935549e-05, cuda: 2.413380e-05, tensor: 4.117851e-05, tensor_stride: 2.595826e-05
+origin: 4.389633e-05, cuda: 4.494314e-05, tensor: 5.727948e-05, tensor_stride: 4.883113e-05
+origin: 4.460313e-06, cuda: 3.982888e-06, tensor: 1.412422e-05, tensor_stride: 5.779817e-06
+origin: 2.028942e-05, cuda: 2.122833e-05, tensor: 2.381425e-05, tensor_stride: 2.458079e-05
+max_ratio_fp32: 1.157782e+00
+max_ratio_stride: 3.630215e-01
+max_ratio_tensor: 2.806658e+00
+max_ratio_cuda: 9.563868e-01
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000009, mean_tensor_stride_error: 0.000002
+build/main 1024 8192 8192 2 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+origin: 2.121925e-05, cuda: 2.258999e-05, tensor: 1.495442e-05, tensor_stride: 2.396040e-05
+origin: -1.740456e-05, cuda: -1.836396e-05, tensor: -5.055929e-05, tensor_stride: -2.439900e-05
+origin: 1.406670e-05, cuda: 2.069678e-05, tensor: -1.124165e-06, tensor_stride: 1.719026e-05
+origin: 1.990795e-05, cuda: 2.407742e-05, tensor: 5.401668e-05, tensor_stride: 3.315732e-05
+origin: -1.192093e-05, cuda: -1.016256e-05, tensor: -4.131428e-05, tensor_stride: -1.509952e-05
+origin: 1.621246e-05, cuda: 1.501729e-05, tensor: 7.407976e-06, tensor_stride: 1.983833e-05
+origin: 8.416176e-05, cuda: 9.385397e-05, tensor: 1.039174e-04, tensor_stride: 9.628944e-05
+origin: -2.717972e-05, cuda: -3.216116e-05, tensor: -4.817813e-05, tensor_stride: -3.608172e-05
+origin: 8.678436e-05, cuda: 8.763722e-05, tensor: 8.575703e-05, tensor_stride: 9.572098e-05
+origin: -1.776218e-05, cuda: -1.788183e-05, tensor: -2.542438e-05, tensor_stride: -2.547941e-05
+origin: 1.049042e-05, cuda: 1.133775e-05, tensor: 5.022394e-05, tensor_stride: 1.289906e-05
+origin: -2.288818e-05, cuda: -2.515526e-05, tensor: -1.873801e-05, tensor_stride: -2.566461e-05
+origin: -8.791685e-06, cuda: -1.131615e-05, tensor: -4.991372e-05, tensor_stride: -1.198638e-05
+origin: -3.743172e-05, cuda: -4.148169e-05, tensor: -4.099729e-05, tensor_stride: -4.532774e-05
+origin: -2.717972e-05, cuda: -2.574583e-05, tensor: -4.694496e-05, tensor_stride: -3.239293e-05
+origin: -4.351139e-06, cuda: -7.732437e-06, tensor: -5.989044e-06, tensor_stride: -1.171258e-05
+origin: -4.136562e-05, cuda: -3.521168e-05, tensor: -3.353148e-05, tensor_stride: -4.752441e-05
+origin: -2.241135e-05, cuda: -3.244041e-05, tensor: 7.626659e-06, tensor_stride: -2.804708e-05
+origin: 3.969669e-05, cuda: 3.545848e-05, tensor: 5.372614e-05, tensor_stride: 4.542865e-05
+origin: 7.447600e-05, cuda: 7.724296e-05, tensor: 1.148541e-04, tensor_stride: 8.308479e-05
+origin: -2.121925e-05, cuda: -2.286967e-05, tensor: -3.935647e-05, tensor_stride: -2.462750e-05
+origin: 3.504753e-05, cuda: 3.752892e-05, tensor: 5.425216e-05, tensor_stride: 3.998842e-05
+origin: 0.000000e+00, cuda: -2.851128e-06, tensor: 2.142158e-06, tensor_stride: 2.456636e-07
+origin: 2.455711e-05, cuda: 2.530389e-05, tensor: 2.044271e-05, tensor_stride: 2.735544e-05
+origin: 2.855062e-05, cuda: 2.939114e-05, tensor: 4.819984e-05, tensor_stride: 3.270965e-05
+origin: -2.503395e-05, cuda: -3.042386e-05, tensor: -1.114397e-05, tensor_stride: -3.126110e-05
+origin: 1.454353e-05, cuda: 1.167154e-05, tensor: 4.598818e-05, tensor_stride: 1.607574e-05
+max_ratio_fp32: 3.891049e+01
+max_ratio_stride: 1.770829e+01
+max_ratio_tensor: 1.016605e+02
+max_ratio_cuda: 4.506232e+01
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000026, mean_tensor_stride_error: 0.000003
+build/main 1024 16 16 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.412425e-07
+max_ratio_stride: 2.599566e-07
+max_ratio_tensor: 2.655535e-07
+max_ratio_cuda: 2.042392e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000001, mean_tensor_stride_error: 0.000001
+build/main 1024 32 32 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.607359e-07
+max_ratio_stride: 3.006609e-07
+max_ratio_tensor: 4.129863e-07
+max_ratio_cuda: 2.303505e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000006, mean_tensor_stride_error: 0.000002
+build/main 1024 64 64 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.852388e-07
+max_ratio_stride: 3.958160e-07
+max_ratio_tensor: 8.303749e-07
+max_ratio_cuda: 2.566453e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000035, mean_tensor_stride_error: 0.000006
+build/main 1024 128 128 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 2.406738e-07
+max_ratio_stride: 4.936920e-07
+max_ratio_tensor: 1.686619e-06
+max_ratio_cuda: 3.003192e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000182, mean_tensor_stride_error: 0.000015
+build/main 1024 256 256 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 3.405684e-07
+max_ratio_stride: 7.570725e-07
+max_ratio_tensor: 1.569466e-06
+max_ratio_cuda: 3.942573e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.000362, mean_tensor_stride_error: 0.000041
+build/main 1024 512 512 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 4.569657e-07
+max_ratio_stride: 1.238800e-06
+max_ratio_tensor: 6.843851e-06
+max_ratio_cuda: 5.449347e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.003700, mean_tensor_stride_error: 0.000113
+build/main 1024 1024 1024 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 5.577424e-07
+max_ratio_stride: 1.477403e-06
+max_ratio_tensor: 6.540830e-06
+max_ratio_cuda: 5.885829e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.007399, mean_tensor_stride_error: 0.000316
+build/main 1024 2048 2048 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 5.834327e-07
+max_ratio_stride: 2.267076e-06
+max_ratio_tensor: 1.323355e-05
+max_ratio_cuda: 7.714988e-07
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.031156, mean_tensor_stride_error: 0.000890
+build/main 1024 4096 4096 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 5.083405e-06
+max_ratio_stride: 3.133007e-06
+max_ratio_tensor: 2.642372e-05
+max_ratio_cuda: 5.484375e-06
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.128298, mean_tensor_stride_error: 0.002509
+build/main 1024 8192 8192 3 
+Fp64
+Fp32
+CUDA32
+TENSOR STRIDE
+TENSOR
+max_ratio_fp32: 1.973897e-06
+max_ratio_stride: 4.578892e-06
+max_ratio_tensor: 5.267321e-05
+max_ratio_cuda: 1.898273e-06
+mean_tensor_ratio: 0.000000, mean_tensor_stride_ratio: 0.000000
+mean_tensor_error: 0.521724, mean_tensor_stride_error: 0.007092
+build/main 1024 16 16 0
+build/main 1024 32 32 0
+build/main 1024 64 64 0
+build/main 1024 128 128 0
+build/main 1024 256 256 0
+build/main 1024 512 512 0
+build/main 1024 1024 1024 0
+build/main 1024 2048 2048 0
+build/main 1024 4096 4096 0
+build/main 1024 8192 8192 0
+build/main 1024 16 16 1
+build/main 1024 32 32 1
+build/main 1024 64 64 1
+build/main 1024 128 128 1
+build/main 1024 256 256 1
+build/main 1024 512 512 1
+build/main 1024 1024 1024 1
+build/main 1024 2048 2048 1
+build/main 1024 4096 4096 1
+build/main 1024 8192 8192 1
+build/main 1024 16 16 2
+build/main 1024 32 32 2
+build/main 1024 64 64 2
+build/main 1024 128 128 2
+build/main 1024 256 256 2
+build/main 1024 512 512 2
+build/main 1024 1024 1024 2
+build/main 1024 2048 2048 2
+build/main 1024 4096 4096 2
+build/main 1024 8192 8192 2
+build/main 1024 16 16 3
+build/main 1024 32 32 3
+build/main 1024 64 64 3
+build/main 1024 128 128 3
+build/main 1024 256 256 3
+build/main 1024 512 512 3
+build/main 1024 1024 1024 3
+build/main 1024 2048 2048 3
+build/main 1024 4096 4096 3
+build/main 1024 8192 8192 3

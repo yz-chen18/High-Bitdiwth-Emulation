@@ -12,3 +12,5 @@ int toFp32_F_FX(float M, Fp16* HiM, Fp16* LoM, Fp16* LoFx);
 int toFp32_F(float M, Fp16* HiM, Fp16* LoM);
 int toFp32(float* M, float Hi_M, float Lo_M);
 Fp32 Fp16_To_Fp32(Fp16 m);
+int matrix_stride_transpose(int m, int n, int s, Fp16* fp16);
+int matrix_stride_transpose(int m, int n, int s, float* fp);

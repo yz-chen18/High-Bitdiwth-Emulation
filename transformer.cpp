@@ -1,4 +1,6 @@
 #include <cstdio>
+#include <cstring>
+#include <cstdlib>
 
 #include "transformer.h"
 #include "common.h"
@@ -19,15 +21,18 @@ unsigned int getHiE(float M) {
 }
 
 Fp32 Fp16_To_Fp32(Fp16 m) {
+    /*
     if (m.us == 0) return Fp32{0};
     unsigned int E = ((m.us & 0x7c00) >> 10) + Fp32_SHIFT - Fp16_SHIFT;
     unsigned int sign = (m.us & 0x8000) >> 15;
-    unsigned int significand = (m.us & 0x03ff);
+    unsigned int significand = (m.us & 0x03ff);*/
 
     Fp32 fp32{0.f};
+    /*
     fp32.ui |= (E << 23);
     fp32.ui |= (significand << 13);
-    fp32.ui |= (sign << 31);
+    fp32.ui |= (sign << 31);*/
+    fp32.fp = m.fp;
 
     return fp32;
 }
@@ -173,6 +178,12 @@ int toFp32_F(float M, Fp16* HiM, Fp16* LoM) {
 
 // generate the high & low significand of fp32_f from a fp32 with fixed E, LoFx is to represent correct Lo considering different E
 int toFp32_F_FX(float M, Fp16* HiM, Fp16* LoM, Fp16* LoFx) {
+    half h = M;
+    HiM->fp = h;
+    LoM->fp = (M - Fp16_To_Fp32(*HiM).fp) * 4096;
+    LoFx->fp = 0.0f;
+
+   /*
     Fp32 fp32{M};
     unsigned int sign, HiE, HiS, R, E, LoE, LoS, Lo_shift;
     parseFp32_FX(M, &sign, &HiE, &HiS, &R, &E, &LoE, &LoS, &Lo_shift);
@@ -182,18 +193,18 @@ int toFp32_F_FX(float M, Fp16* HiM, Fp16* LoM, Fp16* LoFx) {
     // set the exponent of Hi_M to be FP16_EXP_MAX to guarantee the exponent of Lo_M would not undeflow FP16_EXP_MIN
     t_HiM.us |= (HiE << 10);
     t_HiM.us |= (HiS);
-    t_LoM.us |= (R << 15);
+    t_LoM.us |= ((R^sign) << 15);
     t_LoM.us |= (LoE << 10);
     t_LoM.us |= (LoS);
     
     if (E == 0) {
-        t_LoFx.us |= ((1-R) << 15);
+        t_LoFx.us |= ((1-(R^sign)) << 15);
         t_LoFx.us |= (LoE << 10);
     }
 
     *HiM = t_HiM;
     *LoM = t_LoM;
-    *LoFx = t_LoFx;
+    *LoFx = t_LoFx;*/
 
     return 0;
 }
@@ -207,4 +218,42 @@ unsigned int toFp32(float Hi_M, float Lo_M, float Lo_shift) {
     unsigned int Lo_E = getHiE(Lo_M) - Fp16_SHIFT + Fp32_SHIFT;
 
     return fp32.ui;
+}
+
+int matrix_stride_transpose(int m, int n, int s, float* fp) {
+    if (m % s != 0) error("matrix_stride_transpose", "m must be a multiplicate of s");
+    float* t = (float*)malloc(sizeof(float) * m * n);
+    int n_block = m / s;
+    
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            int index = i*n + j;
+            t[(index / m) * m + (index % n_block) * s + (index % m) / n_block] = fp[i*n + j];
+        }
+    }
+
+    memcpy(fp, t, sizeof(float) * m * n);
+    free(t);
+
+    return 0;
+
+}
+
+int matrix_stride_transpose(int m, int n, int s, Fp16* fp) {
+    if (m % s != 0) error("matrix_stride_transpose", "m must be a multiplicate of s");
+    Fp16* t = (Fp16*)malloc(sizeof(Fp16) * m * n);
+    int n_block = m / s;
+    
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            int index = i*n + j;
+            t[(index / m) * m + (index % n_block) * s + (index % m) / n_block] = fp[i*n + j];
+        }
+    }
+
+    memcpy(fp, t, sizeof(Fp16) * m * n);
+    free(t);
+
+    return 0;
+
 }

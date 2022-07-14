@@ -10,9 +10,10 @@
 int main(void) {
     cublasHandle_t handle = NULL;
     cublasCreate(&handle);
-    int m = 4;
-    int k = 8;
-    int n = 1;
+    int m = 8;
+    int k = 128;
+    int n = 128;
+    int s = 8;
 
     float* host_A;
     float* host_B;
@@ -22,8 +23,6 @@ int main(void) {
     Fp16* host_A_Lo;
     Fp16* host_B_Hi;
     Fp16* host_B_Lo;
-    float* host_shift_A;
-    float* host_shift_B;
 
     host_A = (float*)malloc(sizeof(float) * m * k);
     host_B = (float*)malloc(sizeof(float) * n * k);
@@ -34,41 +33,19 @@ int main(void) {
     host_B_Hi = (Fp16*)malloc(sizeof(Fp16) * k * n);
     host_B_Lo = (Fp16*)malloc(sizeof(Fp16) * k * n);
 
-    host_shift_A = (float*)malloc(sizeof(float) * m * k);
-    host_shift_B = (float*)malloc(sizeof(float) * n * k);
-
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < k; j++) {
             Fp32 m;
-            m.ui = 0x45177fe6;
-            host_A[i*k + j] = m.fp;
-            Fp16 hi, lo;
-            unsigned int Hi_shift = toFp32_F(m.fp, &hi, &lo);
-            host_A_Hi[i*k + j] = hi;
-            host_A_Lo[i*k + j] = lo;
-            if (Hi_shift >= 0) {
-                host_shift_A[i*k + j] = pow(2.f, Hi_shift);
-            } else {
-                host_shift_A[i*k + j] = pow(0.5f, -Hi_shift);
-            }
-            
+            //m.ui = 0x45177fe6;
+            host_A[i*k + j] = i*k + j;
         }
     }
 
     for (int i = 0; i < k; i++) {
         for (int j = 0; j < n; j++) {
             Fp32 m;
-            m.ui = 0x3f7a574e;
-            host_B[i*n + j] = m.fp;
-            Fp16 hi, lo;
-            unsigned int Hi_shift = toFp32_F(m.fp, &hi, &lo);
-            host_B_Hi[i*k + j] = hi;
-            host_B_Lo[i*k + j] = lo;
-            if (Hi_shift >= 0) {
-                host_shift_B[i*k + j] = pow(2.f, Hi_shift);
-            } else {
-                host_shift_B[i*k + j] = pow(0.5f, -Hi_shift);
-            }
+            //m.ui = 0x3f7a574e;
+            host_B[i*n + j] = i*n + j;
         }
     }
 
@@ -84,45 +61,37 @@ int main(void) {
     cudaMemcpy(dev_B, host_B, n * k * sizeof(float), cudaMemcpyHostToDevice);
 
     const float alpha = 1.0;
-    const float beta = 0.0;
+    const float beta = 1.0;
 
-    cublasSgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, dev_A, m, dev_B, k, &beta, dev_C, m);
+    cudaMemset(dev_C, 0, sizeof(float) * m * n);
+    cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, dev_A, CUDA_R_32F, m, dev_B, CUDA_R_32F, k, &beta, dev_C, CUDA_R_32F, m, CUBLAS_COMPUTE_32F, CUBLAS_GEMM_DEFAULT);
 
+    printf("CUDA\n");
     cudaMemcpy(host_C, dev_C, n * m * sizeof(float), cudaMemcpyDeviceToHost);
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            printf("%f ", host_C[i*n + j]);
+            printf("%e ", host_C[i*n + j]);
         }
         printf("\n");
     }
 
-    cudaMemset(dev_C, 0.f, m * n);
+    matrix_stride_transpose(k, n, s, host_B);
+    cudaMemcpy(dev_B, host_B, n * k * sizeof(float), cudaMemcpyHostToDevice);
 
-    fp16* dev_A_Hi;
-    fp16* dev_A_Lo;
-    fp16* dev_B_Hi;
-    fp16* dev_B_Lo;
-
-    float* dev_shift_A;
-    float* dev_shift_B;
-
-    cudaMalloc((void**)&dev_A_Hi, sizeof(fp16) * m * k);
-    cudaMalloc((void**)&dev_A_Lo, sizeof(fp16) * m * k);
-    cudaMalloc((void**)&dev_B_Hi, sizeof(fp16) * n * k);
-    cudaMalloc((void**)&dev_B_Lo, sizeof(fp16) * n * k);
-    cudaMalloc((void**)&dev_shift_A, sizeof(float) * m * k);
-    cudaMalloc((void**)&dev_shift_B, sizeof(float) * n * k);
-
-    cudaMemcpy(&dev_A_Hi, host_A_Hi, sizeof(fp16) * m * k, cudaMemcpyDeviceToHost);
-    cudaMemcpy(&dev_A_Lo, host_A_Lo, sizeof(fp16) * m * k, cudaMemcpyDeviceToHost);
-    cudaMemcpy(&dev_B_Hi, host_B_Hi, sizeof(fp16) * n * k, cudaMemcpyDeviceToHost);
-    cudaMemcpy(&dev_B_Lo, host_B_Lo, sizeof(fp16) * n * k, cudaMemcpyDeviceToHost);
-
-    cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, dev_A_Hi, CUDA_R_16F, m, dev_B_Hi, CUDA_R_16F, k, &beta, dev_C, CUDA_R_32F, m, CUDA_R_16F, CUBLAS_GEMM_DEFAULT_TENSOR_OP);
-    cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, dev_A_Hi, CUDA_R_16F, m, dev_B_Lo, CUDA_R_16F, k, &beta, dev_C, CUDA_R_32F, m, CUDA_R_16F, CUBLAS_GEMM_DEFAULT_TENSOR_OP);
-    cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, dev_A_Lo, CUDA_R_16F, m, dev_B_Hi, CUDA_R_16F, k, &beta, dev_C, CUDA_R_32F, m, CUDA_R_16F, CUBLAS_GEMM_DEFAULT_TENSOR_OP);
+    cudaMemset(dev_C, 0, sizeof(float) * m * n);
+    for (int i = 0; i < k / s; i++)
+        cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, s, &alpha, dev_A + i*m, CUDA_R_32F, m*k/s, dev_B + i*s, CUDA_R_32F, k, &beta, dev_C, CUDA_R_32F, m, CUBLAS_COMPUTE_32F, CUBLAS_GEMM_DEFAULT);    
+    //cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, s, &alpha, dev_A + m, CUDA_R_32F, m*2, dev_B + 4, CUDA_R_32F, k, &beta, dev_C, CUDA_R_32F, m, CUBLAS_COMPUTE_32F, CUBLAS_GEMM_DEFAULT); 
+    //cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, 4, &alpha, dev_A, CUDA_R_32F, m*2, dev_B + 8, CUDA_R_32F, k, &beta, dev_C, CUDA_R_32F, m, CUBLAS_COMPUTE_32F, CUBLAS_GEMM_DEFAULT); 
+    //cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, 4, &alpha, dev_A, CUDA_R_32F, m*2, dev_B + 12, CUDA_R_32F, k, &beta, dev_C, CUDA_R_32F, m, CUBLAS_COMPUTE_32F, CUBLAS_GEMM_DEFAULT); 
     
-    //print_matrix(m, n, host_C, n);
-    //cublasGemmEx(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, (void*)dev_A_Hi, (void*)dev_A_Hi, CUDA_R_16F, 8, (void*)dev_B_Hi, CUDA_R_16F, 8, (void*)dev_B_Hi, (void*)dev_C, CUDA_R_16F, 8, CUDA_R_16F, CUBLAS_GEMM_DEFAULT_TENSOR_OP);
+    printf("TENSOR\n");
+    cudaMemcpy(host_C, dev_C, n * m * sizeof(float), cudaMemcpyDeviceToHost);
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%e ", host_C[i*n + j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
